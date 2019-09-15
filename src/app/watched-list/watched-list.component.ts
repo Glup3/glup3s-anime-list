@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Glup3AnimeListGQL, MediaListGroup } from '../../generated';
+import { Glup3AnimeListGQL, MediaListCollection } from '../../generated';
 
 @Component({
   selector: 'app-watched-list',
@@ -10,15 +10,13 @@ import { Glup3AnimeListGQL, MediaListGroup } from '../../generated';
   styleUrls: ['./watched-list.component.scss']
 })
 export class WatchedListComponent implements OnInit {
-  result: Observable<MediaListGroup[]>;
+  result: Observable<MediaListCollection>;
 
   constructor(private glup3AnimeListGQL: Glup3AnimeListGQL) { }
 
   ngOnInit() {
     this.result = this.glup3AnimeListGQL.watch()
       .valueChanges
-      .pipe(map(res => {
-        return res.data.MediaListCollection.lists;
-      }));
+      .pipe(map(res => res.data.MediaListCollection));
   }
 }
