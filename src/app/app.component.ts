@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'glup3-anime-list';
+  title = 'Glup3\'s Anime List';
+  pokemon = 3;
 }
