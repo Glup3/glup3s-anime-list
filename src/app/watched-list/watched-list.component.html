@@ -1,9 +1,7 @@
-<div>
-  <h2>Completed</h2>
-
-  <ul>
-    <li *ngFor="let entry of ((result | async)?.lists)[0].entries">
-      {{ entry.media.title.userPreferred }}
-    </li>
-  </ul>
+<h2>Completed Animes</h2>
+<div class="gridi">
+  <figure *ngFor="let entry of ((result | async)?.MediaListCollection.lists)[0].entries">
+    <img src="{{ entry.media.coverImage.large }}" />
+    <figcaption>{{ entry.media.title.romaji }}</figcaption>
+  </figure>
 </div>

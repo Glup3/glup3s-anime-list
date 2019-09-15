@@ -4062,25 +4062,20 @@ export type Glup3AnimeListQuery = (
   { __typename?: 'Query' }
   & { MediaListCollection: Maybe<(
     { __typename?: 'MediaListCollection' }
-    & { user: Maybe<(
-      { __typename?: 'User' }
-      & Pick<User, 'id' | 'name'>
-      & { avatar: Maybe<(
-        { __typename?: 'UserAvatar' }
-        & Pick<UserAvatar, 'large'>
-      )> }
-    )>, lists: Maybe<Array<Maybe<(
+    & { lists: Maybe<Array<Maybe<(
       { __typename?: 'MediaListGroup' }
       & Pick<MediaListGroup, 'name'>
       & { entries: Maybe<Array<Maybe<(
         { __typename?: 'MediaList' }
-        & Pick<MediaList, 'id' | 'score'>
         & { media: Maybe<(
           { __typename?: 'Media' }
           & Pick<Media, 'id'>
           & { title: Maybe<(
             { __typename?: 'MediaTitle' }
-            & Pick<MediaTitle, 'userPreferred'>
+            & Pick<MediaTitle, 'romaji'>
+          )>, coverImage: Maybe<(
+            { __typename?: 'MediaCoverImage' }
+            & Pick<MediaCoverImage, 'large'>
           )> }
         )> }
       )>>> }
@@ -4090,23 +4085,17 @@ export type Glup3AnimeListQuery = (
 
 export const Glup3AnimeListDocument = gql`
     query Glup3AnimeList {
-  MediaListCollection(userId: 251748, type: ANIME, status_in: [COMPLETED, CURRENT], sort: [MEDIA_POPULARITY_DESC]) {
-    user {
-      id
-      name
-      avatar {
-        large
-      }
-    }
+  MediaListCollection(userId: 251748, type: ANIME, status_in: [COMPLETED], sort: [MEDIA_POPULARITY_DESC]) {
     lists {
       name
       entries {
-        id
-        score
         media {
           id
           title {
-            userPreferred
+            romaji
+          }
+          coverImage {
+            large
           }
         }
       }
