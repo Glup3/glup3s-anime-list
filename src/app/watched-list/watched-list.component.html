@@ -1,5 +1,9 @@
-<ul>
-  <li *ngFor="let anime of completedList">
-    {{ anime.media.title.userPreferred }}
-  </li>
-</ul>
+<div *ngFor="let list of result | async">
+  <h2>{{ list.name }}</h2>
+
+  <ul>
+    <li *ngFor="let anime of list.entries">
+      {{ anime.media.title.userPreferred }}
+    </li>
+  </ul>
+</div>
