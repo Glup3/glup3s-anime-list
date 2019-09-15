@@ -1,3 +1,11 @@
+<h2>Currently watching</h2>
+<div class="gridi">
+  <figure *ngFor="let entry of ((result | async)?.MediaListCollection.lists)[1].entries">
+    <img src="{{ entry.media.coverImage.large }}" />
+    <figcaption>{{ entry.media.title.romaji }}</figcaption>
+  </figure>
+</div>
+
 <h2>Completed Animes</h2>
 <div class="gridi">
   <figure *ngFor="let entry of ((result | async)?.MediaListCollection.lists)[0].entries">

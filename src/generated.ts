@@ -4085,7 +4085,7 @@ export type Glup3AnimeListQuery = (
 
 export const Glup3AnimeListDocument = gql`
     query Glup3AnimeList {
-  MediaListCollection(userId: 251748, type: ANIME, status_in: [COMPLETED], sort: [MEDIA_POPULARITY_DESC]) {
+  MediaListCollection(userId: 251748, type: ANIME, status_in: [COMPLETED, CURRENT], sort: [MEDIA_POPULARITY_DESC]) {
     lists {
       name
       entries {

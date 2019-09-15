@@ -8,6 +8,8 @@ The data comes from the public AniList API (GraphQL Endpoint). My User ID: 25174
 
 > `ng build --prod`
 
+> `'/'` to `'https://glup3.github.io/glup3s-anime-list/'` (in dist/index.html)
+
 > `ngh --dir=dist/glup3-anime-list`
 
 ## Development server
