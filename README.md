@@ -1,6 +1,8 @@
-# Glup3AnimeList
+# Glup3's Anime List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+## Data
+
+The data comes from the public AniList API (GraphQL Endpoint). My User ID: 251748
 
 ## Development server
 
