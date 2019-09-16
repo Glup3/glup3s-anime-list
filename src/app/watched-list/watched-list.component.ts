@@ -11,12 +11,23 @@ import { Glup3AnimeListGQL, Glup3AnimeListQuery } from '../../generated';
 })
 export class WatchedListComponent implements OnInit {
   result: Observable<Glup3AnimeListQuery>;
+  name: string;
 
   constructor(private glup3AnimeListGQL: Glup3AnimeListGQL) { }
 
   ngOnInit() {
-    this.result = this.glup3AnimeListGQL.watch()
-      .valueChanges
-      .pipe(map(res => res.data));
+    
+  }
+
+  onSearch() {
+    this.result = this.glup3AnimeListGQL.watch({
+      username: this.name
+    })
+    .valueChanges
+    .pipe(map(res => res.data));
+  }
+
+  onKey(event: any) {
+    this.name = event.target.value;
   }
 }

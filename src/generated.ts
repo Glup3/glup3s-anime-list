@@ -4055,7 +4055,9 @@ export type YearStats = {
   amount?: Maybe<Scalars['Int']>,
   meanScore?: Maybe<Scalars['Int']>,
 };
-export type Glup3AnimeListQueryVariables = {};
+export type Glup3AnimeListQueryVariables = {
+  username?: Maybe<Scalars['String']>
+};
 
 
 export type Glup3AnimeListQuery = (
@@ -4084,8 +4086,8 @@ export type Glup3AnimeListQuery = (
 );
 
 export const Glup3AnimeListDocument = gql`
-    query Glup3AnimeList {
-  MediaListCollection(userId: 251748, type: ANIME, status_in: [COMPLETED, CURRENT], sort: [MEDIA_POPULARITY_DESC]) {
+    query Glup3AnimeList($username: String) {
+  MediaListCollection(userName: $username, type: ANIME, status_in: [COMPLETED, CURRENT], sort: [MEDIA_POPULARITY_DESC]) {
     lists {
       name
       entries {
