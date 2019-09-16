@@ -31,5 +31,9 @@ export class WatchedListComponent implements OnInit {
   onKey(event: any) {
     this.name = event.target.value;
     this.nameChange.emit(this.name);
+    
+    if (event.key === 'Enter') {
+      this.onSearch();
+    }
   }
 }

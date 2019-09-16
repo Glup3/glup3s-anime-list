@@ -1,5 +1,7 @@
-<input (keyup)="onKey($event)" />
-<button (click)="onSearch()">Search</button>
+<mat-form-field>
+  <input matInput input placeholder="Username" (keyup)="onKey($event)" />
+</mat-form-field>
+<button mat-raised-button (click)="onSearch()">Search</button>
 
 <h2>Currently watching</h2>
 <div class="gridi">
