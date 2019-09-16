@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -11,6 +11,7 @@ import { Glup3AnimeListGQL, Glup3AnimeListQuery } from '../../generated';
 })
 export class WatchedListComponent implements OnInit {
   result: Observable<Glup3AnimeListQuery>;
+  @Output() nameChange: EventEmitter<string> = new EventEmitter<string>();
   name: string;
 
   constructor(private glup3AnimeListGQL: Glup3AnimeListGQL) { }
@@ -29,5 +30,6 @@ export class WatchedListComponent implements OnInit {
 
   onKey(event: any) {
     this.name = event.target.value;
+    this.nameChange.emit(this.name);
   }
 }

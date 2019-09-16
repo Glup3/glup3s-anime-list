@@ -1,2 +1,2 @@
-<h1>{{ title }}</h1>
-<app-watched-list></app-watched-list>
+<h1>{{ name }}'s Anime List</h1>
+<app-watched-list (nameChange)="changeName($event)"></app-watched-list>

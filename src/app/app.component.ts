@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Glup3\'s Anime List';
-  pokemon = 3;
+  name: string = '<name>';
+
+  changeName(name: string) {
+    this.name = name;
+  }
 }
