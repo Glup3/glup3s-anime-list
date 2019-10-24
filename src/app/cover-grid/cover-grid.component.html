@@ -1,0 +1,8 @@
+<mat-grid-list cols="4" *ngFor="let entry of list?.entries">
+  <mat-grid-tile>
+    <figure>
+      <img src="{{ entry.media.coverImage.large }}" />
+      <figcaption>{{ entry.media.title.romaji }}</figcaption>
+    </figure>
+  </mat-grid-tile>
+</mat-grid-list>

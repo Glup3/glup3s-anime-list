@@ -17,7 +17,8 @@ export class WatchedListComponent implements OnInit {
   constructor(private glup3AnimeListGQL: Glup3AnimeListGQL) { }
 
   ngOnInit() {
-    
+    this.name = 'Glup3';
+    this.onSearch();
   }
 
   onSearch() {
